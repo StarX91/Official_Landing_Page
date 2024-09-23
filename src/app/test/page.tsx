@@ -51,7 +51,7 @@ const chartConfig = {
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ThreeDCardDemo } from "@/components/3Dcard"
+// import { ThreeDCardDemo } from "@/components/3Dcard"
 import { CombinedSection } from "@/components/3Dpin"
 
 const Navigation: React.FC = () => {
@@ -222,7 +222,7 @@ const Navigation: React.FC = () => {
             ))}
           </div>
         </div> */}
-        <ThreeDCardDemo />
+        {/* <ThreeDCardDemo /> */}
       </section>
 
       {/* <section>

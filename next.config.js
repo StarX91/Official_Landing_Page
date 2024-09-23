@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      domains: ['example.com','aceternity.com','images.unsplash.com','img.freepik.com','media.istockphoto.com', 'bannerbot-public.s3.ap-south-1.amazonaws.com'],
+      domains: ['example.com','assets.aceternity.com','aceternity.com','images.unsplash.com','img.freepik.com','media.istockphoto.com', 'bannerbot-public.s3.ap-south-1.amazonaws.com'],
     },
   }
   

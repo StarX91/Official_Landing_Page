@@ -15,6 +15,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
+import Navbarr from "./Navbarr"
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -55,11 +57,11 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <div className="flex  items-center justify-center m-6 ">
-      <NavigationMenu>
+    <div className="flex  items-center justify-center pt-6 m-6 sm:m-0 ">
+      {/* <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-black">HOME</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-black sm:text-base">HOME</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <li className="row-span-3 bg-black">
@@ -92,7 +94,7 @@ export function NavigationMenuDemo() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-black">ABOUT US</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-black sm:text-base">ABOUT US</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {components.map((component) => (
@@ -122,7 +124,8 @@ export function NavigationMenuDemo() {
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
+      <Navbarr />
     </div>
   )
 }
@@ -152,3 +155,5 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+

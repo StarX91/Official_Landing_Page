@@ -1,107 +1,55 @@
-import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu} from "@nextui-org/navbar";
-import {ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale} from "./ui/Icons.jsx";
-import {AcmeLogo} from "./ui/AcmeLogo.jsx";
+import { useState } from 'react';
 
-export function Navbarr() {
-  const icons = {
-    chevron: <ChevronDown fill="currentColor" size={16} />,
-    scale: <Scale className="text-warning" fill="currentColor" size={30} />,
-    lock: <Lock className="text-success" fill="currentColor" size={30} />,
-    activity: <Activity className="text-secondary" fill="currentColor" size={30} />,
-    flash: <Flash className="text-primary" fill="currentColor" size={30} />,
-    server: <Server className="text-success" fill="currentColor" size={30} />,
-    user: <TagUser className="text-danger" fill="currentColor" size={30} />,
-  };
+const Navbarr= () => {
+  const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
 
   return (
-    <Navbar>
-      <NavbarBrand>
-        <AcmeLogo />
-        <p className="font-bold text-inherit">ACME</p>
-      </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <Dropdown>
-          <NavbarItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                endContent={icons.chevron}
-                radius="sm"
-                variant="light"
-              >
-                Features
-              </Button>
-            </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
-            aria-label="ACME features"
-            className="w-[340px]"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            <DropdownItem
-              key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
-              startContent={icons.scale}
+    <nav className="bg-transparent text-white py-4">
+      <div className="container mx-auto">
+        <ul className="flex space-x-8">
+          <li className="relative">
+            <button
+              className="hover:underline"
+              
             >
-              Autoscaling
-            </DropdownItem>
-            <DropdownItem
-              key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-              startContent={icons.activity}
+              HOME
+            </button>
+            {isHomeDropdownOpen && (
+              <ul className="absolute left-0 mt-2 w-48 bg-gray-900 text-white shadow-lg">
+                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Home 1</li>
+                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Home 2</li>
+              </ul>
+            )}
+          </li>
+          <li className="relative">
+            <button
+              className="hover:underline"
+              
             >
-              Usage Metrics
-            </DropdownItem>
-            <DropdownItem
-              key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              startContent={icons.flash}
-            >
-              Production Ready
-            </DropdownItem>
-            <DropdownItem
-              key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              startContent={icons.server}
-            >
-              +99% Uptime
-            </DropdownItem>
-            <DropdownItem
-              key="supreme_support"
-              description="Overcome any challenge with a supporting team ready to respond."
-              startContent={icons.user}
-            >
-              +Supreme Support
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-    </Navbar>
+              ABOUT US
+            </button>
+            {isAboutDropdownOpen && (
+              <ul className="absolute left-0 mt-2 w-48 bg-gray-900 text-white shadow-lg">
+                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Our Team</li>
+                <li className="px-4 py-2 hover:bg-gray-700 cursor-pointer">Our Story</li>
+              </ul>
+            )}
+          </li>
+          <li>
+            <a href="#product" className="hover:underline">
+              PRODUCT
+            </a>
+          </li>
+          <li>
+            <a href="#gallery" className="hover:underline">
+              GALLERY
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbarr;

@@ -4,7 +4,7 @@ import { SparklesCore } from "./ui/sparkles";
 
 export function SparklesPreview() {
   return (
-    <div className="h-[40rem]  w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <h1 className="md:text-5xl text-3xl lg:text-7xl font-thin text-center text-white relative z-20">
         Welcome to Star<span className="text-red-700">X</span>91
       </h1>

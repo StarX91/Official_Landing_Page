@@ -8,6 +8,13 @@ import About from '@/components/About'
 import HeroScrollDemo from '@/components/Drone'
 import TabsDemo from '@/components/Tabs'
 import HeroParallaxDemo from '@/components/Industries'
+import  ThreeDCardDemo  from '@/components/3Dcard'
+import AirXMedic from '@/components/AirXMedic'
+import FeaturesSectionDemo from '@/components/MedicalCare'
+import ParallaxScrollDemo from '@/components/InfiniteCarousel'
+import ImageCarousel from '@/components/InfiniteCarousel'
+import LayoutGridDemo from '@/components/Partners'
+import VideoBackground from '@/components/Navbarr'
 
 
 function page() {
@@ -16,14 +23,23 @@ function page() {
       <ShootingStars />
       <StarsBackground />
        <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
+        className="-top-10 left-0 md:left-60 md:-top-20"
         fill="white"
       />
+        {/* <Spotlight
+    className="hidden md:block absolute -top-10 left-0 md:left-60 md:-top-20 w-full h-[200vh] pointer-events-none"
+    fill="white"
+  /> */}
       <NavigationMenuDemo />
+     {/* <VideoBackground /> */}
       <SparklesPreview />
       <HeroScrollDemo />
-      <TabsDemo />
+      <ThreeDCardDemo />
+      <FeaturesSectionDemo />
+      <AirXMedic />
       <HeroParallaxDemo />
+      <LayoutGridDemo />
+      {/* <ImageCarousel /> */}
       <About />
 
     </div>
